@@ -3,7 +3,8 @@
 
     let disabled = true;
 
-    function keyPressed() {
+    function keyPressed(event) {
+        console.log(event);
         disabled = false;
     }
 
