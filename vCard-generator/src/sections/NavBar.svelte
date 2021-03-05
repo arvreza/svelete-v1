@@ -2,6 +2,8 @@
     export let title;
 
     let disabled = true;
+    let name = "";
+    let firstInput = "";
 
     function keyPressed(event) {
         console.log(event);
@@ -10,6 +12,8 @@
 
     function resetPressed() {
         disabled = true;
+        name = "";
+        firstInput.focus();
     }
 </script>
 
@@ -30,8 +34,12 @@
         Name 
         <input type="text" 
             placeholder="Please input your name:" 
-            on:keydown={ keyPressed } />
+            on:keydown={ keyPressed } 
+            bind:value={name}
+            bind:this={firstInput} />
     </label>
     <button type="reset" {disabled} on:click={resetPressed}>Reset</button>
 </form>
+
+<section>{name}</section>
 
